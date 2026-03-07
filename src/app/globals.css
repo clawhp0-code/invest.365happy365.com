@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fefdfb;
+  --foreground: #1a1a1a;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Anchor links for headings */
+.anchor {
+  @apply ml-2 opacity-0 transition-opacity;
+}
+
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor {
+  @apply opacity-100;
+}
+
+/* Code block styling */
+[data-rehype-pretty-code-figure] pre {
+  @apply overflow-x-auto rounded-lg;
+}
+
+[data-rehype-pretty-code-figure] code {
+  @apply text-sm;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+  z-index: 100;
+  transition: width 0.1s linear;
+}
